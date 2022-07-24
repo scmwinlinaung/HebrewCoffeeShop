@@ -33,7 +33,7 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'လယ်ဂျာနံပါတ် ထည့်ပါ';
+                return 'Plz set username';
               }
               return null;
             },
@@ -58,7 +58,7 @@ class SignUpForm extends StatelessWidget {
             child: TextFormField(
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'ထီဖွင့်ရက်ရွေးပါ';
+                  return 'Plz set phone number';
                 }
                 return null;
               },
@@ -81,7 +81,7 @@ class SignUpForm extends StatelessWidget {
             child: TextFormField(
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'အများဆုံးထိုးကြေးသတ်မှတ်ပါ';
+                  return 'Plz set password';
                 }
                 return null;
               },
@@ -104,6 +104,7 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(height: Constants.defaultPadding / 2),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).primaryColor,
               maximumSize: const Size(double.infinity, 56),
               minimumSize: const Size(double.infinity, 56),
             ),

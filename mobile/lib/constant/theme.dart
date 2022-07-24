@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ThemeConstant {
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: const Color(0xffcc9966),
+    primaryColor: const Color(0xff964B00),
     indicatorColor: const Color(0xff5e87d4),
     textTheme: const TextTheme(
       headline1: TextStyle(

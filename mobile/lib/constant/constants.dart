@@ -214,7 +214,7 @@ class Constants {
     'Last year'
   ];
 
-  static const Color primaryColor = Colors.teal;
+  static const Color primaryColor = const Color(0x964B00);
   static const Color scaffoldBackgroundColor = Color.fromRGBO(245, 247, 249, 1);
 
   static const kPrimaryLightColor = Color(0xFFE0F2F1);

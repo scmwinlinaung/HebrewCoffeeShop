@@ -7,6 +7,8 @@ class TableModel extends Equatable {
   final double amount;
   final String status;
   final String approvedBy;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   const TableModel(
       {required this.id,
@@ -14,7 +16,9 @@ class TableModel extends Equatable {
       required this.menus,
       required this.amount,
       required this.status,
-      required this.approvedBy});
+      required this.approvedBy,
+      required this.createdAt,
+      required this.updatedAt});
 
   factory TableModel.fromJson(Map<String, dynamic> data) {
     return TableModel(
@@ -24,6 +28,8 @@ class TableModel extends Equatable {
       amount: double.parse(data['amount'].toString()),
       status: data['status'],
       approvedBy: data['approvedBy'],
+      createdAt: data['createdAt'],
+      updatedAt: data['updatedAt'],
     );
   }
 
@@ -35,9 +41,12 @@ class TableModel extends Equatable {
       amount: json['amount'],
       status: json['status'],
       approvedBy: json['approvedBy'],
+      createdAt: json['createdAt'],
+      updatedAt: json['updatedAt'],
     );
   }
 
   @override
-  List<Object?> get props => [id, name, menus, amount, status, approvedBy];
+  List<Object?> get props =>
+      [id, name, menus, amount, status, approvedBy, createdAt, updatedAt];
 }

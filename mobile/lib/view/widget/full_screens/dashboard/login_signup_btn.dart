@@ -16,11 +16,12 @@ class LoginAndSignupBtn extends StatelessWidget {
           tag: "login_btn",
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).primaryColor,
               maximumSize: const Size(double.infinity, 56),
               minimumSize: const Size(double.infinity, 56),
             ),
             onPressed: () {
-              Navigator.popAndPushNamed(
+              Navigator.pushNamed(
                 context,
                 FullLoginScreen.routeName,
               );
@@ -33,7 +34,7 @@ class LoginAndSignupBtn extends StatelessWidget {
         const SizedBox(height: 16),
         ElevatedButton(
           onPressed: () {
-            Navigator.popAndPushNamed(
+            Navigator.pushNamed(
               context,
               FullSignUpScreen.routeName,
             );

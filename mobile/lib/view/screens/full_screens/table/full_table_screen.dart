@@ -1,6 +1,5 @@
 // Flutter: External Libraries
 import 'package:flutter/material.dart';
-import 'package:mobile/constant/table_data.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
 import 'package:mobile/view/widget/full_screens/table/table_card_widget.dart';
 import 'package:provider/provider.dart';
@@ -44,17 +43,17 @@ class _FullTableScreenState extends State<FullTableScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: Card(
-                    elevation: 2,
-                    child: Icon(
-                      Icons.add,
-                      size: 70,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
+                // const Padding(
+                //   padding: EdgeInsets.all(5.0),
+                //   child: Card(
+                //     elevation: 2,
+                //     child: Icon(
+                //       Icons.add,
+                //       size: 70,
+                //       color: Colors.grey,
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(
                   height: 5,
                 ),
@@ -64,7 +63,7 @@ class _FullTableScreenState extends State<FullTableScreen> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 4.0,
                       mainAxisSpacing: 8.0,
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       shrinkWrap: true,
                       children: List.generate(
                           tableProvider.getTables().length - 1, (index) {

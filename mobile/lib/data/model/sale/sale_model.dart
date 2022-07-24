@@ -6,13 +6,17 @@ class SaleModel extends Equatable {
   final double price;
   final String menu;
   final double amount;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   const SaleModel(
       {required this.id,
       required this.menuClassification,
       required this.price,
       required this.menu,
-      required this.amount});
+      required this.amount,
+      required this.createdAt,
+      required this.updatedAt});
 
   factory SaleModel.fromJson(Map<String, dynamic> data) {
     return SaleModel(
@@ -20,7 +24,9 @@ class SaleModel extends Equatable {
         menuClassification: data['menuClassification'],
         price: data['price'],
         menu: data['menu'],
-        amount: data['amount']);
+        amount: data['amount'],
+        createdAt: data['createdAt'],
+        updatedAt: data['updatedAt']);
   }
 
   factory SaleModel.fromMap(Map<String, dynamic> json) {
@@ -29,9 +35,12 @@ class SaleModel extends Equatable {
         menuClassification: json['menuClassification'],
         price: json['price'],
         menu: json['menu'],
-        amount: json['amount']);
+        amount: json['amount'],
+        createdAt: json['createdAt'],
+        updatedAt: json['updatedAt']);
   }
 
   @override
-  List<Object?> get props => [id, menuClassification, price, menu, amount];
+  List<Object?> get props =>
+      [id, menuClassification, price, menu, amount, createdAt, updatedAt];
 }

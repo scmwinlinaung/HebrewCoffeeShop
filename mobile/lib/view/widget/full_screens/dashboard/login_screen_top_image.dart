@@ -11,10 +11,10 @@ class LoginScreenTopImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "လယ်ဂျာ ရွေးပါ",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-        ),
+        // const Text(
+        //   "လယ်ဂျာ ရွေးပါ",
+        //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        // ),
         const SizedBox(height: Constants.defaultPadding * 2),
         Row(
           children: [

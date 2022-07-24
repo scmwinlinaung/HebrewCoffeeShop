@@ -15,15 +15,11 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          login ? "လယ်ဂျာ အသစ်ဖွင့်မလား။ " : "လယ်ဂျာ ဖွင့်ပြီးသားလား။ ",
-          style: const TextStyle(color: Constants.primaryColor),
-        ),
         GestureDetector(
           onTap: press as void Function()?,
-          child: Text(
-            login ? "လယ်ဂျာ အသစ်ဖွင့်ပါ" : "လယ်ဂျာရွေးပါ",
-            style: const TextStyle(
+          child: const Text(
+            "Sign Up",
+            style: TextStyle(
               color: Constants.primaryColor,
               fontWeight: FontWeight.bold,
             ),

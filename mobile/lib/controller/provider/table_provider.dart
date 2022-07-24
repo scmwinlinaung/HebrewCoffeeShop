@@ -61,7 +61,10 @@ class TableProvider with ChangeNotifier {
             orderType: value.orderType,
             price: value.price,
             imageBase64: value.imageBase64,
-            imageType: value.imageType))
+            imageType: value.imageType,
+            status: value.status,
+            createdAt: value.createdAt,
+            updatedAt: value.updatedAt))
         .toList();
     notifyListeners();
   }

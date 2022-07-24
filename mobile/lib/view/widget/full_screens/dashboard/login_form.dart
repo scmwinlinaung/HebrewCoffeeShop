@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:mobile/constant/constants.dart';
 import 'package:mobile/controller/provider/authentication_provider.dart';
+import 'package:mobile/view/screens/full_screens/home/full_home_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_signup_screen.dart';
-import 'package:mobile/view/widget/full_screens/dashboard/already_have_an_account.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginForm extends StatelessWidget {
   final AuthenticationProvider provider;
@@ -80,38 +78,24 @@ class LoginForm extends StatelessWidget {
             tag: "login_btn",
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).primaryColor,
                 maximumSize: const Size(double.infinity, 56),
                 minimumSize: const Size(double.infinity, 56),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.popAndPushNamed(
+                  context,
+                  FullHomeScreen.routeName,
+                );
+              },
               child: Text(
-                "စတင်မည်".toUpperCase(),
+                "Login".toUpperCase(),
               ),
             ),
           ),
           const SizedBox(height: Constants.defaultPadding),
-          AlreadyHaveAnAccountCheck(
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const FullSignUpScreen();
-                  },
-                ),
-              );
-            },
-          ),
         ],
       ),
     );
-  }
-
-  addLedgerInfoInPrefs(int ledgerId, String ledgerNo, String betLimit,
-      String openingDate) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt('ledgerId', ledgerId);
-    prefs.setString('ledgerNo', ledgerNo);
-    prefs.setString('betLimit', betLimit);
   }
 }

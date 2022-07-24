@@ -11,10 +11,10 @@ class SignUpScreenTopImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "လယ်ဂျာ ဖွင့်ပါ".toUpperCase(),
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
+        // Text(
+        //   "လယ်ဂျာ ဖွင့်ပါ".toUpperCase(),
+        //   style: const TextStyle(fontWeight: FontWeight.bold),
+        // ),
         const SizedBox(height: Constants.defaultPadding),
         Row(
           children: [

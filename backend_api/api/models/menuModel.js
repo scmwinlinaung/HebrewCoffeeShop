@@ -19,6 +19,12 @@ const OrderType = {
     ပါဆယ်: "ပါဆယ်",
     ဆိုင်စား: "ဆိုင်စား"
 }
+
+const MenuStatus = {
+    active: 'active',
+    inactive: 'inactive'
+}
+
 const menuSchema = new Schema(
     {
         name: {
@@ -44,6 +50,9 @@ const menuSchema = new Schema(
         },
         imageType: {
             type: String
+        },
+        status: {
+            type: MenuStatus
         }
     },
     {

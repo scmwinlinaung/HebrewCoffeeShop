@@ -30,7 +30,7 @@ class TableCardWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/icon/table.png",
+                "assets/icons/table.png",
                 width: 50,
                 height: 50,
               ),

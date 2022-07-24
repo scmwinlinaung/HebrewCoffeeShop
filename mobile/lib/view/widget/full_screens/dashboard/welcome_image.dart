@@ -15,20 +15,20 @@ class WelcomeImage extends StatelessWidget {
         //   "Welcome From Hebrews Coffee Shop",
         //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         // ),
-        const SizedBox(height: Constants.defaultPadding * 2),
+        // const SizedBox(height: Constants.defaultPadding * 2),
         Row(
           children: [
             const Spacer(),
             Expanded(
-              flex: 8,
+              flex: 3,
               child: SvgPicture.asset(
-                "assets/icons/chat.svg",
+                "assets/icons/plate.svg",
               ),
             ),
             const Spacer(),
           ],
         ),
-        const SizedBox(height: Constants.defaultPadding * 2),
+        // const SizedBox(height: Constants.defaultPadding * 2),
       ],
     );
   }

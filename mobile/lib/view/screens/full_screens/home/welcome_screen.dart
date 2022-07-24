@@ -18,9 +18,9 @@ class FullWelcomeScreen extends StatelessWidget {
             desktop: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Expanded(
-                  child: WelcomeImage(),
-                ),
+                SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.5,
+                    child: const WelcomeImage()),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +57,7 @@ class MobileWelcomeScreen extends StatelessWidget {
           children: const [
             Spacer(),
             Expanded(
-              flex: 8,
+              flex: 10,
               child: LoginAndSignupBtn(),
             ),
             Spacer(),

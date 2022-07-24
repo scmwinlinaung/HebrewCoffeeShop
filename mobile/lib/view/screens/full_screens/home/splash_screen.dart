@@ -19,7 +19,7 @@ class _FullSplashScreenState extends State<FullSplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.popAndPushNamed(
         context,
         FullWelcomeScreen.routeName,
