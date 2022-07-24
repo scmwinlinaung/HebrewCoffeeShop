@@ -4,6 +4,7 @@ import 'package:chart_sparkline/chart_sparkline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:mobile/view/screens/full_screens/menu/full_menu_screen.dart';
+import 'package:mobile/view/screens/full_screens/sale/full_sale_screen.dart';
 import 'package:mobile/view/screens/full_screens/table/full_table_screen.dart';
 
 // FullHomeScreen: StatefulWidget Class
@@ -79,7 +80,7 @@ class _FullHomeScreenState extends State<FullHomeScreen> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.popAndPushNamed(
+                    Navigator.pushNamed(
                       context,
                       FullTableScreen.routeName,
                     );
@@ -110,7 +111,7 @@ class _FullHomeScreenState extends State<FullHomeScreen> {
                           Text('200', style: TextStyle(color: Colors.black45)),
                         ]),
                   ), onTap: () {
-                Navigator.popAndPushNamed(
+                Navigator.pushNamed(
                   context,
                   FullMenuScreen.routeName,
                 );
@@ -138,8 +139,12 @@ class _FullHomeScreenState extends State<FullHomeScreen> {
                                   fontSize: 24.0)),
                           Text('300K', style: TextStyle(color: Colors.black45)),
                         ]),
-                  ),
-                  onTap: () async {}),
+                  ), onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  FullSaleScreen.routeName,
+                );
+              }),
               _buildTile(
                 Padding(
                   padding: const EdgeInsets.all(24.0),

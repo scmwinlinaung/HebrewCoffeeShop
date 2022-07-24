@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile/config/app_config.dart';
 import 'package:mobile/controller/provider/authentication_provider.dart';
 import 'package:mobile/controller/provider/menu_provider.dart';
+import 'package:mobile/controller/provider/sale_provider.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
 import 'package:mobile/view/screens/full_screens/home/full_home_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_login_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_signup_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/splash_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/welcome_screen.dart';
+import 'package:mobile/view/screens/full_screens/menu/full_menu_detail_screen.dart';
 import 'package:mobile/view/screens/full_screens/menu/full_menu_screen.dart';
 import 'package:mobile/view/screens/full_screens/more/full_more_screen.dart';
 import 'package:mobile/view/screens/full_screens/sale/full_sale_screen.dart';
@@ -30,7 +32,8 @@ void main() {
             host: appConfig.params['dev']!.host,
             port: appConfig.params['dev']!.port)),
     ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
-    ChangeNotifierProvider(create: (_) => MenuProvider())
+    ChangeNotifierProvider(create: (_) => MenuProvider()),
+    ChangeNotifierProvider(create: (_) => SaleProvider())
   ]));
 }
 
@@ -54,6 +57,7 @@ class MyApp extends StatelessWidget {
           FullHomeScreen.routeName: (_) => const FullHomeScreen(),
           FullTableScreen.routeName: (_) => const FullTableScreen(),
           FullMenuScreen.routeName: (_) => const FullMenuScreen(),
+          FullMenuDetailScreen.routeName: (_) => const FullMenuDetailScreen(),
           FullSaleScreen.routeName: (_) => const FullSaleScreen(),
           FullMoreScreen.routeName: (_) => const FullMoreScreen(),
           FullTableDetailScreen.routeName: (_) => const FullTableDetailScreen(),

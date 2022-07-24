@@ -40,6 +40,17 @@ class SaleModel extends Equatable {
         updatedAt: json['updatedAt']);
   }
 
+  factory SaleModel.Empty() {
+    return SaleModel(
+        id: '',
+        menuClassification: '',
+        price: 0,
+        menu: '',
+        amount: 0,
+        createdAt: DateTime(2022, 9, 7, 17, 30),
+        updatedAt: DateTime(2022, 9, 7, 17, 30));
+  }
+
   @override
   List<Object?> get props =>
       [id, menuClassification, price, menu, amount, createdAt, updatedAt];

@@ -1,25 +1,24 @@
-// Flutter: External Libraries
 import 'package:flutter/material.dart';
 import 'package:mobile/controller/provider/menu_provider.dart';
-import 'package:mobile/view/widget/full_screens/menu/menu_listing_widget.dart';
+import 'package:mobile/data/model/menu/menu_model.dart';
+import 'package:mobile/view/widget/full_screens/menu/menu_detail_widget.dart';
 import 'package:provider/provider.dart';
 
-// FullMenuScreen: StatefulWidget Class
-class FullMenuScreen extends StatefulWidget {
+class FullMenuDetailScreen extends StatefulWidget {
   // Static: Class Properties
-  static String title = "Full Menu Screen";
-  static String routeName = "/full-menu";
+  static String title = "Full Menu Detail Screen";
+  static String routeName = "/full-menu-detail";
 
   // Constructor
-  const FullMenuScreen({
+  const FullMenuDetailScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<FullMenuScreen> createState() => _FullMenuScreenState();
+  State<FullMenuDetailScreen> createState() => _FullMenuDetailScreenState();
 }
 
-class _FullMenuScreenState extends State<FullMenuScreen> {
+class _FullMenuDetailScreenState extends State<FullMenuDetailScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -43,7 +42,8 @@ class _FullMenuScreenState extends State<FullMenuScreen> {
                   Navigator.of(context).pop();
                 })),
         backgroundColor: Colors.grey[200],
-        body: MenuListingWidget(
+        body: MenuDetailWidget(
+          menuModel: MenuModel.Empty(),
           menuProvider: provider,
         ));
   }

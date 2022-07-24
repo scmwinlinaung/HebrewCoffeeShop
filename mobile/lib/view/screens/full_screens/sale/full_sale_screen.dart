@@ -1,6 +1,7 @@
 // Flutter: External Libraries
 import 'package:flutter/material.dart';
-import 'package:mobile/controller/provider/table_provider.dart';
+import 'package:mobile/controller/provider/sale_provider.dart';
+import 'package:mobile/view/widget/full_screens/sale/sale_listing_widget.dart';
 import 'package:provider/provider.dart';
 
 // FullSaleScreen: StatefulWidget Class
@@ -19,21 +20,31 @@ class FullSaleScreen extends StatefulWidget {
 }
 
 class _FullSaleScreenState extends State<FullSaleScreen> {
-  // Final: Class Properties
-  final String title = "Rates Table";
-  final String subTitle = "This is rates table screen.";
-  final String learnMoreText = "Learn More";
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  int _currentIndex = 0;
-
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Way");
+    final provider = Provider.of<SaleProvider>(context);
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        key: _scaffoldKey,
+        appBar: AppBar(
+            backgroundColor: Colors.grey[200],
+            shadowColor: Colors.grey[200],
+            elevation: 0,
+            leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Theme.of(context).primaryColor,
+                ),
+                onPressed: () {
+                  // clear the selected table
+
+                  Navigator.of(context).pop();
+                })),
+        backgroundColor: Colors.grey[200],
+        body: SaleListingWidget(
+          saleProvider: provider,
+        ));
   }
 }
