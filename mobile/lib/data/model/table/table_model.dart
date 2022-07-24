@@ -46,6 +46,18 @@ class TableModel extends Equatable {
     );
   }
 
+  factory TableModel.empty() {
+    return TableModel(
+        id: '',
+        name: '',
+        menus: [],
+        amount: 0,
+        status: '',
+        approvedBy: '',
+        createdAt: DateTime(2022, 9, 7, 17, 30),
+        updatedAt: DateTime(2022, 9, 7, 17, 30));
+  }
+
   @override
   List<Object?> get props =>
       [id, name, menus, amount, status, approvedBy, createdAt, updatedAt];

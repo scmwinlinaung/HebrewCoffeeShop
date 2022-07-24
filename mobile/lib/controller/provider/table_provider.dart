@@ -14,8 +14,7 @@ class TableProvider with ChangeNotifier {
 
   List<TableModel> _tables = List.empty();
   List<MenuModel> _menus = List.empty();
-  TableModel _table = TableModel(
-      id: '', name: '', menus: [], amount: 0, status: '', approvedBy: '');
+  TableModel _table = TableModel.empty();
 
 // getters
 
@@ -56,9 +55,8 @@ class TableProvider with ChangeNotifier {
     _menus = menus
         .map((value) => MenuModel(
             id: value.id,
-            name: value.name + " " + "(${value.orderType})",
+            name: value.name,
             classification: value.classification,
-            orderType: value.orderType,
             price: value.price,
             imageBase64: value.imageBase64,
             imageType: value.imageType,
@@ -103,7 +101,9 @@ class TableProvider with ChangeNotifier {
         menus: _table.menus,
         amount: amount,
         status: _table.status,
-        approvedBy: _table.approvedBy);
+        approvedBy: _table.approvedBy,
+        createdAt: _table.createdAt,
+        updatedAt: _table.updatedAt);
     notifyListeners();
   }
 

@@ -1,6 +1,8 @@
 // Flutter: External Libraries
 import 'package:flutter/material.dart';
+import 'package:mobile/controller/provider/menu_provider.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
+import 'package:mobile/view/widget/full_screens/menu/menu_detail_widget.dart';
 import 'package:provider/provider.dart';
 
 // FullMenuScreen: StatefulWidget Class
@@ -34,7 +36,27 @@ class _FullMenuScreenState extends State<FullMenuScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final tableProvider = Provider.of<TableProvider>(context);
-    return const Text("Hey");
+    final provider = Provider.of<MenuProvider>(context);
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        key: _scaffoldKey,
+        appBar: AppBar(
+            backgroundColor: Colors.grey[200],
+            shadowColor: Colors.grey[200],
+            elevation: 0,
+            leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Theme.of(context).primaryColor,
+                ),
+                onPressed: () {
+                  // clear the selected table
+
+                  Navigator.of(context).pop();
+                })),
+        backgroundColor: Colors.grey[200],
+        body: MenuDetailWidget(
+          menuProvider: provider,
+        ));
   }
 }

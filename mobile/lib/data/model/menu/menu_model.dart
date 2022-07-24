@@ -6,7 +6,6 @@ class MenuModel extends Equatable {
   final String id;
   final String name;
   final String classification;
-  final String orderType;
   final double price;
   final String imageBase64;
   final String imageType;
@@ -18,7 +17,6 @@ class MenuModel extends Equatable {
       {required this.id,
       required this.name,
       required this.classification,
-      required this.orderType,
       required this.price,
       required this.imageBase64,
       required this.imageType,
@@ -30,7 +28,6 @@ class MenuModel extends Equatable {
         id: data['_id'],
         name: data['name'],
         classification: data['classification'],
-        orderType: data['orderType'],
         price: double.parse(data['price'].toString()),
         imageBase64: data['imageBase64'],
         imageType: data['imageType'],
@@ -44,7 +41,6 @@ class MenuModel extends Equatable {
         id: json['_id'],
         name: json['name'],
         classification: json['classification'],
-        orderType: json['orderType'],
         price: json['price'],
         imageBase64: json['imageBase64'],
         imageType: json['imageType'],
@@ -58,7 +54,6 @@ class MenuModel extends Equatable {
         id: '',
         name: '',
         classification: '',
-        orderType: '',
         price: 0,
         imageBase64: '',
         imageType: '',
@@ -71,7 +66,6 @@ class MenuModel extends Equatable {
         id,
         name,
         classification,
-        orderType,
         price,
         imageBase64,
         imageType,

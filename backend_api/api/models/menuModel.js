@@ -37,10 +37,10 @@ const menuSchema = new Schema(
             type: MenuClassification,
             required: true,
         },
-        orderType: {
-            type: OrderType,
-            required: true,
-        },
+        // orderType: {
+        //     type: OrderType,
+        //     required: true,
+        // },
         price: {
             type: Number,
             default: 0

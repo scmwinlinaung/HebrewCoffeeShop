@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/config/app_config.dart';
 import 'package:mobile/controller/provider/authentication_provider.dart';
+import 'package:mobile/controller/provider/menu_provider.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
 import 'package:mobile/view/screens/full_screens/home/full_home_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_login_screen.dart';
@@ -28,7 +29,8 @@ void main() {
         create: (_) => TableProvider(
             host: appConfig.params['dev']!.host,
             port: appConfig.params['dev']!.port)),
-    ChangeNotifierProvider(create: (_) => AuthenticationProvider())
+    ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
+    ChangeNotifierProvider(create: (_) => MenuProvider())
   ]));
 }
 

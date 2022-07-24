@@ -71,13 +71,7 @@ class _FullTableDetailScreenState extends State<FullTableDetailScreen> {
                 ),
                 onPressed: () {
                   // clear the selected table
-                  tableProvider.setSelectedTable(TableModel(
-                      id: '',
-                      name: '',
-                      menus: [],
-                      amount: 0,
-                      status: '',
-                      approvedBy: ''));
+                  tableProvider.setSelectedTable(TableModel.empty());
                   Navigator.of(context).pop();
                 })),
         backgroundColor: Colors.grey[200],

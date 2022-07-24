@@ -14,6 +14,8 @@ const MenuClassification =
     ထမင်းနှင့်ဟင်း: "ထမင်းနှင့်ဟင်း"
 
 }
+
+
 const saleSchema = new Schema(
     {
         name: {
