@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/controller/provider/sale_provider.dart';
 import 'package:mobile/data/model/sale/sale_model.dart';
+import 'package:mobile/view/screens/full_screens/sale/full_sale_detail_screen.dart';
 
 import 'sale_text_form_field.dart';
 
@@ -22,7 +23,7 @@ class _SaleListingWidgetState extends State<SaleListingWidget> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: PaginatedDataTable(
-            columnSpacing: MediaQuery.of(context).size.width / 18,
+            columnSpacing: MediaQuery.of(context).size.width / 20,
             horizontalMargin: 5,
             rowsPerPage: 10,
             showCheckboxColumn: false,
@@ -66,10 +67,10 @@ class SaleTableData extends DataTableSource {
   DataRow getRow(int index) {
     return DataRow(
         onSelectChanged: (value) {
-          // Navigator.pushNamed(
-          //   context,
-          //   FullSaleDetailScreen.routeName,
-          // );
+          Navigator.pushNamed(
+            context,
+            FullSaleDetailScreen.routeName,
+          );
         },
         onLongPress: () {},
         cells: [

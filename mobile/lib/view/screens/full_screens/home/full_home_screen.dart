@@ -3,6 +3,7 @@ import 'package:mobile/constant/constants.dart';
 import 'package:chart_sparkline/chart_sparkline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:mobile/view/screens/full_screens/expense/full_expense_screen.dart';
 import 'package:mobile/view/screens/full_screens/menu/full_menu_screen.dart';
 import 'package:mobile/view/screens/full_screens/sale/full_sale_screen.dart';
 import 'package:mobile/view/screens/full_screens/table/full_table_screen.dart';
@@ -146,30 +147,34 @@ class _FullHomeScreenState extends State<FullHomeScreen> {
                 );
               }),
               _buildTile(
-                Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
-                        Material(
-                            color: Colors.redAccent,
-                            shape: CircleBorder(),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Icon(Icons.monetization_on,
-                                  color: Colors.white, size: 30.0),
-                            )),
-                        Padding(padding: EdgeInsets.only(bottom: 16.0)),
-                        Text('Expense',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 24.0)),
-                        Text('300K', style: TextStyle(color: Colors.black45)),
-                      ]),
-                ),
-              ),
+                  Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const <Widget>[
+                          Material(
+                              color: Colors.redAccent,
+                              shape: CircleBorder(),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Icon(Icons.monetization_on,
+                                    color: Colors.white, size: 30.0),
+                              )),
+                          Padding(padding: EdgeInsets.only(bottom: 16.0)),
+                          Text('Expense',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 24.0)),
+                          Text('300K', style: TextStyle(color: Colors.black45)),
+                        ]),
+                  ), onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  FullExpenseScreen.routeName,
+                );
+              }),
               _buildTile(
                 Padding(
                   padding: const EdgeInsets.all(24.0),
@@ -194,7 +199,7 @@ class _FullHomeScreenState extends State<FullHomeScreen> {
                         Text('', style: TextStyle(color: Colors.black45)),
                       ]),
                 ),
-                onTap: () async {},
+                onTap: () {},
               ),
             ],
           ),

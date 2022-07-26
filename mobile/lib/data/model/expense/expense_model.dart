@@ -40,7 +40,7 @@ class ExpenseModel extends Equatable {
     return ExpenseModel(
         id: '1',
         title: 'Petty Cash',
-        category: '',
+        category: 'Office Expense',
         total: 20000,
         createdAt: DateTime(2022, 9, 7, 17, 30),
         updatedAt: DateTime(2022, 9, 7, 17, 30));

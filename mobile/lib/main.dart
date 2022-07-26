@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/config/app_config.dart';
 import 'package:mobile/controller/provider/authentication_provider.dart';
+import 'package:mobile/controller/provider/expense_provider.dart';
 import 'package:mobile/controller/provider/menu_provider.dart';
 import 'package:mobile/controller/provider/sale_provider.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
+import 'package:mobile/view/screens/full_screens/expense/full_expense_detail_screen.dart';
+import 'package:mobile/view/screens/full_screens/expense/full_expense_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_home_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_login_screen.dart';
 import 'package:mobile/view/screens/full_screens/home/full_signup_screen.dart';
@@ -12,6 +15,7 @@ import 'package:mobile/view/screens/full_screens/home/welcome_screen.dart';
 import 'package:mobile/view/screens/full_screens/menu/full_menu_detail_screen.dart';
 import 'package:mobile/view/screens/full_screens/menu/full_menu_screen.dart';
 import 'package:mobile/view/screens/full_screens/more/full_more_screen.dart';
+import 'package:mobile/view/screens/full_screens/sale/full_sale_detail_screen.dart';
 import 'package:mobile/view/screens/full_screens/sale/full_sale_screen.dart';
 import 'package:mobile/view/screens/full_screens/table/full_table_detail_screen.dart';
 import 'package:mobile/view/screens/full_screens/table/full_table_screen.dart';
@@ -33,7 +37,8 @@ void main() {
             port: appConfig.params['dev']!.port)),
     ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
     ChangeNotifierProvider(create: (_) => MenuProvider()),
-    ChangeNotifierProvider(create: (_) => SaleProvider())
+    ChangeNotifierProvider(create: (_) => SaleProvider()),
+    ChangeNotifierProvider(create: (_) => ExpenseProvider())
   ]));
 }
 
@@ -59,6 +64,10 @@ class MyApp extends StatelessWidget {
           FullMenuScreen.routeName: (_) => const FullMenuScreen(),
           FullMenuDetailScreen.routeName: (_) => const FullMenuDetailScreen(),
           FullSaleScreen.routeName: (_) => const FullSaleScreen(),
+          FullSaleDetailScreen.routeName: (_) => const FullSaleDetailScreen(),
+          FullExpenseScreen.routeName: (_) => const FullExpenseScreen(),
+          FullExpenseDetailScreen.routeName: (_) =>
+              const FullExpenseDetailScreen(),
           FullMoreScreen.routeName: (_) => const FullMoreScreen(),
           FullTableDetailScreen.routeName: (_) => const FullTableDetailScreen(),
           FullLoginScreen.routeName: (_) => const FullLoginScreen(),
