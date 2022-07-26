@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
 import 'package:mobile/data/model/table/table_model.dart';
-import 'package:mobile/view/screens/full_screens/table/full_table_screen.dart';
 import 'package:mobile/view/widget/full_screens/table/table_detail_widget.dart';
 import 'package:provider/provider.dart';
 

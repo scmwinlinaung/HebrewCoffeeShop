@@ -94,12 +94,12 @@ class TableProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void updateAmount(double amount) {
+  void updateAmount(double total) {
     _table = TableModel(
         id: _table.id,
         name: _table.name,
         menus: _table.menus,
-        amount: amount,
+        total: total,
         status: _table.status,
         approvedBy: _table.approvedBy,
         createdAt: _table.createdAt,

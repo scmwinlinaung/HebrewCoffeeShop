@@ -51,10 +51,10 @@ class MenuModel extends Equatable {
 
   factory MenuModel.Empty() {
     return MenuModel(
-        id: '',
-        name: '',
-        classification: '',
-        price: 0,
+        id: '1',
+        name: 'Cappachino',
+        classification: 'Coffee',
+        price: 2000,
         imageBase64: '',
         imageType: '',
         status: MenuStatus.active,

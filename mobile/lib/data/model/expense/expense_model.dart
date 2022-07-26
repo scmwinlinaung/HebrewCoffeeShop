@@ -4,7 +4,7 @@ class ExpenseModel extends Equatable {
   final String id;
   final String title;
   final String category;
-  final int amount;
+  final int total;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -12,7 +12,7 @@ class ExpenseModel extends Equatable {
       {required this.id,
       required this.title,
       required this.category,
-      required this.amount,
+      required this.total,
       required this.createdAt,
       required this.updatedAt});
 
@@ -21,7 +21,7 @@ class ExpenseModel extends Equatable {
         id: data['_id'],
         title: data['title'],
         category: data['category'],
-        amount: data['amount'],
+        total: data['total'],
         createdAt: data['createdAt'],
         updatedAt: data['updatedAt']);
   }
@@ -31,20 +31,20 @@ class ExpenseModel extends Equatable {
         id: json['_id'],
         title: json['title'],
         category: json['category'],
-        amount: json['amount'],
+        total: json['total'],
         createdAt: json['createdAt'],
         updatedAt: json['updatedAt']);
   }
 
   factory ExpenseModel.Empty() {
     return ExpenseModel(
-        id: '',
-        title: '',
+        id: '1',
+        title: 'Petty Cash',
         category: '',
-        amount: 0,
+        total: 20000,
         createdAt: DateTime(2022, 9, 7, 17, 30),
         updatedAt: DateTime(2022, 9, 7, 17, 30));
   }
   @override
-  List<Object> get props => [id, title, category, amount, createdAt, updatedAt];
+  List<Object> get props => [id, title, category, total, createdAt, updatedAt];
 }

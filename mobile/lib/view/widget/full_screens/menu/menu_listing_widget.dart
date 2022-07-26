@@ -24,7 +24,7 @@ class _MenuListingWidgetState extends State<MenuListingWidget> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: PaginatedDataTable(
-            columnSpacing: MediaQuery.of(context).size.width / 15,
+            columnSpacing: MediaQuery.of(context).size.width / 18,
             horizontalMargin: 5,
             rowsPerPage: 10,
             showCheckboxColumn: false,

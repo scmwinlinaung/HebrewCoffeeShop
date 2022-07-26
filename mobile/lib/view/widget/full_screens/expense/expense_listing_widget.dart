@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/controller/provider/sale_provider.dart';
-import 'package:mobile/data/model/sale/sale_model.dart';
+import 'package:mobile/controller/provider/expense_provider.dart';
+import 'package:mobile/data/model/expense/expense_model.dart';
 
-import 'sale_text_form_field.dart';
-
-class SaleListingWidget extends StatefulWidget {
-  final SaleProvider saleProvider;
-  const SaleListingWidget({Key? key, required this.saleProvider})
+class ExpenseListingWidget extends StatefulWidget {
+  final ExpenseProvider expenseProvider;
+  const ExpenseListingWidget({Key? key, required this.expenseProvider})
       : super(key: key);
 
   @override
-  State<SaleListingWidget> createState() => _SaleListingWidgetState();
+  State<ExpenseListingWidget> createState() => _ExpenseListingWidgetState();
 }
 
-class _SaleListingWidgetState extends State<SaleListingWidget> {
+class _ExpenseListingWidgetState extends State<ExpenseListingWidget> {
   final TextEditingController nameCtrl = TextEditingController();
   final TextEditingController classificationCtrl = TextEditingController();
   final TextEditingController priceCtrl = TextEditingController();
@@ -22,39 +20,36 @@ class _SaleListingWidgetState extends State<SaleListingWidget> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: PaginatedDataTable(
-            columnSpacing: MediaQuery.of(context).size.width / 18,
+            columnSpacing: MediaQuery.of(context).size.width / 15,
             horizontalMargin: 5,
             rowsPerPage: 10,
             showCheckboxColumn: false,
             dataRowHeight: MediaQuery.of(context).size.height * 0.06,
             columns: [
               DataColumn(
-                  label: Text('Menu',
+                  label: Text('Title',
                       style: Theme.of(context).textTheme.headline6)),
               DataColumn(
-                  label: Text('Classification',
+                  label: Text('Category',
                       style: Theme.of(context).textTheme.headline6)),
               DataColumn(
-                  label: Text('Amount',
-                      style: Theme.of(context).textTheme.headline6)),
-              DataColumn(
-                  label: Text('Price',
+                  label: Text('Total',
                       style: Theme.of(context).textTheme.headline6)),
               const DataColumn(label: Text(''))
             ],
-            source: SaleTableData(
-                menus: [SaleModel.Empty()],
+            source: ExpenseTableData(
+                menus: [ExpenseModel.Empty()],
                 context: context,
-                provider: widget.saleProvider)));
+                provider: widget.expenseProvider)));
   }
 }
 
-class SaleTableData extends DataTableSource {
-  final List<SaleModel> menus;
+class ExpenseTableData extends DataTableSource {
+  final List<ExpenseModel> menus;
   final BuildContext context;
-  final SaleProvider provider;
+  final ExpenseProvider provider;
 
-  SaleTableData(
+  ExpenseTableData(
       {required this.menus, required this.context, required this.provider});
   @override
   bool get isRowCountApproximate => false;
@@ -68,17 +63,16 @@ class SaleTableData extends DataTableSource {
         onSelectChanged: (value) {
           // Navigator.pushNamed(
           //   context,
-          //   FullSaleDetailScreen.routeName,
+          //   FullExpenseDetailScreen.routeName,
           // );
         },
         onLongPress: () {},
         cells: [
-          DataCell(Text(menus[index].menu)),
+          DataCell(Text(menus[index].title)),
           DataCell(
-            Text(menus[index].menuClassification),
+            Text(menus[index].category),
           ),
-          DataCell(Text(menus[index].amount.toString())),
-          DataCell(Text(menus[index].price.toString())),
+          DataCell(Text(menus[index].total.toString())),
           DataCell(IconButton(
             icon: const Icon(
               Icons.delete,

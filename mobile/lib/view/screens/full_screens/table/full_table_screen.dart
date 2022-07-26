@@ -1,5 +1,6 @@
 // Flutter: External Libraries
 import 'package:flutter/material.dart';
+import 'package:mobile/constant/table_data.dart';
 import 'package:mobile/controller/provider/table_provider.dart';
 import 'package:mobile/view/widget/full_screens/table/table_card_widget.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,22 @@ class _FullTableScreenState extends State<FullTableScreen> {
   Widget build(BuildContext context) {
     TableProvider tableProvider = Provider.of<TableProvider>(context);
     return Scaffold(
+        resizeToAvoidBottomInset: false,
+        key: _scaffoldKey,
+        appBar: AppBar(
+            backgroundColor: Colors.grey[200],
+            shadowColor: Colors.grey[200],
+            elevation: 0,
+            leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Theme.of(context).primaryColor,
+                ),
+                onPressed: () {
+                  // clear the selected table
+
+                  Navigator.of(context).pop();
+                })),
         body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -57,22 +74,21 @@ class _FullTableScreenState extends State<FullTableScreen> {
                 const SizedBox(
                   height: 5,
                 ),
-                if (tableProvider.getTables().isNotEmpty)
-                  GridView.count(
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 4.0,
-                      mainAxisSpacing: 8.0,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      shrinkWrap: true,
-                      children: List.generate(
-                          tableProvider.getTables().length - 1, (index) {
-                        return TableCardWidget(
-                          id: tableProvider.getTables()[index].id,
-                          tableName: tableProvider.getTables()[index].name,
-                          total: tableProvider.getTables()[index].amount,
-                        );
-                      }, growable: true)),
+                // if (tableProvider.getTables().isNotEmpty)
+                GridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 4.0,
+                    mainAxisSpacing: 8.0,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    shrinkWrap: true,
+                    children: List.generate(tables.length - 1, (index) {
+                      return TableCardWidget(
+                        id: tables[index].id,
+                        tableName: tables[index].name,
+                        total: tables[index].total,
+                      );
+                    }, growable: true)),
               ],
             )));
   }

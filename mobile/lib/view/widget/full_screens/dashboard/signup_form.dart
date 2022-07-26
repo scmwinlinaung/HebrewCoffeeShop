@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:mobile/constant/constants.dart';
 import 'package:mobile/controller/provider/authentication_provider.dart';
+import 'package:mobile/view/screens/full_screens/home/full_home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -108,7 +109,12 @@ class SignUpForm extends StatelessWidget {
               maximumSize: const Size(double.infinity, 56),
               minimumSize: const Size(double.infinity, 56),
             ),
-            onPressed: () async {},
+            onPressed: () {
+              Navigator.popAndPushNamed(
+                context,
+                FullHomeScreen.routeName,
+              );
+            },
             child: Text("Register".toUpperCase()),
           ),
           const SizedBox(height: Constants.defaultPadding),

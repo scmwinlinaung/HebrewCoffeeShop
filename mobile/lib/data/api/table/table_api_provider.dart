@@ -57,7 +57,7 @@ class TableApiProvider {
     var body = {
       "name": tableModel.name,
       "menus": List<String>.from(tableModel.menus),
-      "amount": tableModel.amount,
+      "total": tableModel.total,
       "status": tableModel.status,
       "approvedBy": tableModel.approvedBy
     };

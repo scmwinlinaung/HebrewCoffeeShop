@@ -27,7 +27,7 @@ const tableSchema = new Schema(
             required: true,
             trim: false,
         },
-        amount: {
+        total: {
             type: Number,
             default: 0.0
         },

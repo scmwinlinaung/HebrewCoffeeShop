@@ -4,7 +4,7 @@ class TableModel extends Equatable {
   final String id;
   final String name;
   final List<String> menus;
-  final double amount;
+  final double total;
   final String status;
   final String approvedBy;
   final DateTime createdAt;
@@ -14,7 +14,7 @@ class TableModel extends Equatable {
       {required this.id,
       required this.name,
       required this.menus,
-      required this.amount,
+      required this.total,
       required this.status,
       required this.approvedBy,
       required this.createdAt,
@@ -25,7 +25,7 @@ class TableModel extends Equatable {
       id: data['_id'],
       name: data['name'],
       menus: List<String>.from(data['menus']),
-      amount: double.parse(data['amount'].toString()),
+      total: double.parse(data['total'].toString()),
       status: data['status'],
       approvedBy: data['approvedBy'],
       createdAt: data['createdAt'],
@@ -38,7 +38,7 @@ class TableModel extends Equatable {
       id: json['id'],
       name: json['name'],
       menus: List<String>.from(json['menus']),
-      amount: json['amount'],
+      total: json['total'],
       status: json['status'],
       approvedBy: json['approvedBy'],
       createdAt: json['createdAt'],
@@ -51,7 +51,7 @@ class TableModel extends Equatable {
         id: '',
         name: '',
         menus: [],
-        amount: 0,
+        total: 0,
         status: '',
         approvedBy: '',
         createdAt: DateTime(2022, 9, 7, 17, 30),
@@ -60,5 +60,5 @@ class TableModel extends Equatable {
 
   @override
   List<Object?> get props =>
-      [id, name, menus, amount, status, approvedBy, createdAt, updatedAt];
+      [id, name, menus, total, status, approvedBy, createdAt, updatedAt];
 }

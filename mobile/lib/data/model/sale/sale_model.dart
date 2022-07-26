@@ -42,11 +42,11 @@ class SaleModel extends Equatable {
 
   factory SaleModel.Empty() {
     return SaleModel(
-        id: '',
-        menuClassification: '',
-        price: 0,
-        menu: '',
-        amount: 0,
+        id: '1',
+        menuClassification: 'Coffee',
+        price: 2000,
+        menu: 'Cappachino',
+        amount: 1,
         createdAt: DateTime(2022, 9, 7, 17, 30),
         updatedAt: DateTime(2022, 9, 7, 17, 30));
   }
