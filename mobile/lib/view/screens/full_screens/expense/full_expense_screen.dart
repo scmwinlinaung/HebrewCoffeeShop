@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 class FullExpenseScreen extends StatefulWidget {
   // Static: Class Properties
   static String title = "Full Menu Screen";
-  static String routeName = "/full-menu";
+  static String routeName = "/full-expense";
 
   // Constructor
   const FullExpenseScreen({

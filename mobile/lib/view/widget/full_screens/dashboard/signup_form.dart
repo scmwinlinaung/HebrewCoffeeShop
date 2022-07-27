@@ -38,11 +38,8 @@ class SignUpForm extends StatelessWidget {
               }
               return null;
             },
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.name,
             textInputAction: TextInputAction.next,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-            ],
             cursorColor: Constants.primaryColor,
             controller: _ledgerNoController,
             decoration: const InputDecoration(
@@ -64,6 +61,10 @@ class SignUpForm extends StatelessWidget {
                 return null;
               },
               textInputAction: TextInputAction.done,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
+              keyboardType: TextInputType.number,
               cursorColor: Constants.primaryColor,
               decoration: const InputDecoration(
                 hintText: "phone number",
@@ -87,11 +88,8 @@ class SignUpForm extends StatelessWidget {
                 return null;
               },
               controller: _betLimitController,
-              keyboardType: TextInputType.number,
+              // keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-              ],
               cursorColor: Constants.primaryColor,
               decoration: const InputDecoration(
                 hintText: "password",

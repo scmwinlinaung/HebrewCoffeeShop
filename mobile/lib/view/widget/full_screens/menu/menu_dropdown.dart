@@ -54,7 +54,7 @@ class _MenuDropdownWidgetState extends State<MenuDropdownWidget> {
           items: widget.itemList.map<DropdownMenuItem<dynamic>>((dynamic item) {
             return DropdownMenuItem(
               value: item,
-              child: Text(item.name),
+              child: Text(item.name, style: const TextStyle(fontSize: 16)),
             );
           }).toList(),
           onChanged: widget.function,

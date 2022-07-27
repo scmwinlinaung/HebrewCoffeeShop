@@ -17,7 +17,7 @@ class TableDetailWidget extends StatefulWidget {
 
 class _TableDetailWidgetState extends State<TableDetailWidget> {
   String newMenuId = '';
-  var total = 3000.0;
+  var total = 2000.0;
   @override
   void initState() {
     super.initState();
@@ -84,25 +84,13 @@ class _TableDetailWidgetState extends State<TableDetailWidget> {
                                 ),
                               ),
                               SizedBox(
-                                  width: 220,
-                                  child: MenuDropdownWidget(
-                                      currentValue: menus[0],
-                                      itemList: menus,
-                                      function: (menu) {
-                                        var newMenu = menu as MenuModel;
-                                        final TableProvider _tableProvider =
-                                            Provider.of<TableProvider>(context,
-                                                listen: false);
-                                        // _tableProvider.updateMenu(
-                                        //     tableProvider.getMenus().firstWhere(
-                                        //         (element) =>
-                                        //             element.id ==
-                                        //             tableProvider
-                                        //                 .getSelectedTable()
-                                        //                 .menus[i]),
-                                        //     newMenu,
-                                        //     i);
-                                      })),
+                                  width: 170,
+                                  child: Text(menus[0].name,
+                                      style: const TextStyle(fontSize: 16))),
+                              SizedBox(
+                                  width: 50,
+                                  child: Text(menus[0].price.toString(),
+                                      style: const TextStyle(fontSize: 16)))
                             ],
                           ),
                           const SizedBox(
